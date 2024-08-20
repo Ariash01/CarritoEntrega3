@@ -5,25 +5,25 @@ const productos = [
         id: "producto-01",
         titulo: "Vestido Verde Li",
         precio: 27,
-        img: "../img/001.jpg"
+        img: "./img/001.jpg"
     },
     {
         id: "producto-02",
         titulo: "Vestido Negro Li",
         precio: 30,
-        img: "../img/002.jpg"
+        img: "./img/002.jpg"
     },
     {
         id: "producto-03",
         titulo: "Vestido Celestea",
         precio: 35,
-        img: "../img/005.jpeg"
+        img: "./img/005.jpeg"
     },
     {
         id: "producto-4",
         titulo: "Vestido Amarillo",
         precio: 27,
-        img: "../img/006.jpeg"
+        img: "./img/006.jpeg"
     }
 ];
 
