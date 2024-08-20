@@ -108,7 +108,6 @@ function actualizarCarrito () {
 
             div.append(button);
             carritoProductos.append(div);
-
         });
     }
     actualizarTotal();
