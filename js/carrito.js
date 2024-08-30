@@ -62,7 +62,7 @@ formulario.addEventListener("submit", (event) => {
                 actualizarCarrito();
                 Swal.fire({
                     icon: "success",
-                    title: "Carrito Vacío",
+                    title: "Compra realizada",
                     showConfirmButton: false,
                     timer: 1500,
                 }).then (() => {
