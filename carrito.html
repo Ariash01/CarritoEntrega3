@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -26,11 +30,69 @@
     <main>
         <section class="banner-container">
         </section>
-        <div class="titulo-carrito">
-            <h2>Carrito</h2>
+        <div class="datos">
+            <h2>Información</h2>
         </div>
-        <div class="pagina-carrito" id="pagina-carrito">
-        </div>
+        <section class="data">
+            <div class="derecha">
+                <form class="formulario" id="formulario" novalidate>
+                    <fieldset class="form-border">
+                        <legend class="legend-form">Recibo</legend>
+                        <div class="form-grid">
+                            <div class="izq">
+                                <div>
+                                    <label class="label-form" for="cedula">Cédula:</label>
+                                    <input class="input-form" type="text" id="cedula" name="txtcedula" required>
+                                </div>
+                                <div>
+                                    <label class="label-form" for="usuario">Nombre:</label>
+                                    <input class="input-form" type="text" id="usuario" name="txtuser" required>
+                                </div>
+                                <div>
+                                    <label class="label-form" for="correo">Correo Electrónico:</label>
+                                    <input class="input-form" type="email" id="correo" name="txtcorreo" required>
+                                </div>
+                                <div>
+                                    <label class="label-form" for="ciudad">Ciudad:</label>
+                                    <input class="input-form" type="text" id="ciudad" name="txtciudad" required>
+                                </div>
+                            </div>
+                            <div class="derecha">
+                                <div>
+                                    <label class="label-form" for="direccion">Dirección:</label>
+                                    <input class="input-form" type="text" id="direccion" name="txtdireccion" required>
+                                </div>
+                                <div>
+                                    <label class="label-form" for="tarjeta">Número tarjeta:</label>
+                                    <input class="input-form" type="text" id="tarjeta" name="txttarjeta" required>
+                                </div>
+                                <div>
+                                    <label class="label-form" for="fecha_venc">Fecha vencimiento:</label>
+                                    <input class="input-form" type="date" id="fecha_venc" name="txtfechavenc" required>
+                                </div>
+                                <div>
+                                    <label class="label-form" for="cvv">CVV:</label>
+                                    <input class="input-form" type="text" id="cvv" name="txtcvv" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="caja-boton">
+                            <button type="submit" class="btn-pagar" id="vaciar-carrito">Pagar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="izq">
+                <div class="titulo-carrito">
+                    <h2>Carrito</h2>
+                </div>
+                <div class="pagina-carrito d-none" id="pagina-carrito">
+                </div>
+                <div class="carrito-total">
+                    <h2>Total: <span id="carrito-total">$0</span></h2>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -42,6 +104,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/carrito.js"></script> 
 </body>
-<script src="./js/carrito.js"></script>
+
 </html>

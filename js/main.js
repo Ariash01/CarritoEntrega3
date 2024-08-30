@@ -1,58 +1,41 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const productos = [
-    {
-        id: "producto-01",
-        titulo: "Vestido Verde Li",
-        precio: 27,
-        img: "./img/001.jpg"
-    },
-    {
-        id: "producto-02",
-        titulo: "Vestido Negro Li",
-        precio: 30,
-        img: "./img/002.jpg"
-    },
-    {
-        id: "producto-03",
-        titulo: "Vestido Celestea",
-        precio: 35,
-        img: "./img/005.jpeg"
-    },
-    {
-        id: "producto-4",
-        titulo: "Vestido Amarillo",
-        precio: 27,
-        img: "./img/006.jpeg"
-    }
-];
-
 const contenedorProducto = document.querySelector("#productos");
 const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
+const irAPagar = document.querySelector("#ir-a-pagar");
 const irAlCarrito = document.querySelector("#ir-al-carrito");
 
-productos.forEach((producto) => {
-    let div = document.createElement("div");
-    div.classList.add("producto");
-    div.innerHTML = `
-    <img class="producto-img" src="${producto.img}" alt="">
-    <h3>${producto.titulo}</h3>
-    <p>$${producto.precio}</p>
-    `;
+fetch("./data/productos.json")
+    .then((resp) => resp.json())
+    .then((data) => {
+        mostrarProductos(data);
+    });
 
-    let button = document.createElement("button");
-    button.classList.add("producto-btn");
-    button.innerHTML = "Agregar al carrito";
-    button.addEventListener("click", () => {
-        agregarAlCarrito(producto);
-    })
 
-    div.append(button);
-    contenedorProducto.append(div);
-});
+function mostrarProductos(productos) {
+    productos.forEach((producto) => {
+        let div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+        <img class="producto-img" src="${producto.img}" alt="">
+        <h3>${producto.titulo}</h3>
+        <p>$${producto.precio}</p>
+        `;
+
+        let button = document.createElement("button");
+        button.classList.add("producto-btn");
+        button.innerHTML = "Agregar al carrito";
+        button.addEventListener("click", () => {
+            agregarAlCarrito(producto);
+        })
+
+        div.append(button);
+        contenedorProducto.append(div);
+    });
+}
 
 const agregarAlCarrito = (producto) => {
     let productoCarrito = carrito.find((item) => item.id === producto.id);
@@ -81,11 +64,13 @@ function actualizarCarrito () {
         carritoVacio.classList.remove("d-none");
         carritoProductos.classList.add("d-none");
         vaciarCarrito.classList.add("d-none");
+        irAPagar.classList.add("d-none");
         irAlCarrito.classList.add("d-none");
     } else {
         carritoVacio.classList.add("d-none");
         carritoProductos.classList.remove("d-none");
         vaciarCarrito.classList.remove("d-none");
+        irAPagar.classList.remove("d-none");
         irAlCarrito.classList.remove("d-none");
 
         carritoProductos.innerHTML = "";
@@ -123,6 +108,18 @@ function borrarDelCarrito (producto) {
         carrito.splice(indice, 1);
     }
     actualizarCarrito();
+
+    Toastify({
+        text: producto.titulo + " eliminado",
+        avatar: producto.img,
+        duration: 1200,
+        close: true,
+        className: "toast-agregar",
+        style: {
+        background: "linear-gradient(to right, #F1F1F1, #0F3D3E)",
+        width: "280px",
+        },
+    }).showToast();
 }
 
 function actualizarTotal () {

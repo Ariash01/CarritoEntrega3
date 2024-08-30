@@ -195,7 +195,8 @@ ul li a {
     margin-left: 150px;
 }
 
-#vaciar-carrito {
+#vaciar-carrito,
+#ir-a-pagar, #btn-pagar {
     font-size: 1.2rem;
     background-color: #0F3D3E;
     color: white;
@@ -204,6 +205,21 @@ ul li a {
     border-radius: 1rem;
     margin-block: 1rem;
     cursor: pointer;
+}
+
+.caja-boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+#btn-pagar {
+    width: 20%;
+}
+
+#ir-a-pagar a {
+    color: white;
 }
 
 .carrito-total {
@@ -239,6 +255,68 @@ ul li a {
     font-size: 1.5rem;
     color: #0F3D3E;
     padding: 20px;
+}
+
+
+.datos h2 {
+    font-size: 2rem;
+    color: #0F3D3E;
+    padding: 20px;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formulario {
+    margin-left: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.izq, .derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-border {
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 2px;
+}
+
+.legend-form {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 30px;
+    margin-left: 30px;
+}
+
+.label-form {
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.input-form {
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #cce3f9d9;
 }
 
 .pagina-carrito {
