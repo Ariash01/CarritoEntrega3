@@ -1,5 +1,6 @@
 Carrito de compras
-- Se creó un array de objetos para guardar un id, imagen, nombre y precio de los productos.
+- Se creó un array de objetos en formato JSON para guardar un id, imagen, nombre y precio de los productos.
+- Se usa fetch para obtener el array de objetos que contiene a los productos.
 - Se usa DOM para ingresar a los ID de los elementos y métodos para manipular las clases.
 - Se usan diferentes funciones para agregar, eliminar, mostrar los productos, la cantidad y el total a pagar.
 - Se usan librerías para notificar que se han añadido o eliminado productos.
@@ -7,4 +8,6 @@ Carrito de compras
 - Se usan Operadores Avanzados para simplificar el código sin perder legibilidad.
 - Se emplean eventos en los botones.
 - Se crea una segunda página en la que solo se puede acceder si hay ítems en el carrito (carrito.html).
-- La página carrito solo mostrará los productos añadidos (se prevee añadir un formulario de datos).
+- La página carrito solo mostrará los productos añadidos y el total.
+- Se crea un formulario en la página carrito, en el cual tendrán que llenar los campos para poder realizar la compra, caso contrario no se podrá terminar.
+- Al presionar el botón de Pagar, saldrá una alerta para realizar la compra y si selecciona Si, se confirmará la misma y se te redirigirá a la página de Inicio.
