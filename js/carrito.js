@@ -49,8 +49,7 @@ formulario.addEventListener("submit", (event) => {
     if (formulario.checkValidity()) {
         const cantidadTotal = carritoLS.reduce((acc, prod) => acc + prod.cantidad, 0);
         Swal.fire({
-            title: "¿Estás seguro de vaciar todo el carrito?",
-            text: "Se borrarán " + cantidadTotal + " productos.",
+            title: "¿Estás seguro de realizar la compra?",
             icon: "question",
             showDenyButton: true,
             denyButtonText: "No",
